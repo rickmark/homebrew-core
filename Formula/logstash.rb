@@ -38,7 +38,9 @@ class Logstash < Formula
       https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html
     EOS
   end
-  
+
+  plist_options :manual => "logstash"
+
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
