@@ -38,6 +38,35 @@ class Logstash < Formula
       https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html
     EOS
   end
+  
+  def plist; <<-EOS.undent
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>KeepAlive</key>
+          <false/>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>ProgramArguments</key>
+          <array>
+            <string>#{HOMEBREW_PREFIX}/bin/logstash</string>
+          </array>
+          <key>EnvironmentVariables</key>
+          <dict>
+          </dict>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>WorkingDirectory</key>
+          <string>#{var}</string>
+          <key>StandardErrorPath</key>
+          <string>#{var}/log/logstash.log</string>
+          <key>StandardOutPath</key>
+          <string>#{var}/log/logstash.log</string>
+        </dict>
+      </plist>
+    EOS
+  end
 
   test do
     (testpath/"simple.conf").write <<-EOS.undent
