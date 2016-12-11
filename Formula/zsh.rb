@@ -28,9 +28,9 @@ class Zsh < Formula
   end
 
   devel do
-    url "http://www.zsh.org/pub/development/zsh-5.2-test-1.tar.gz"
-    version "5.2-test-1"
-    sha256 "50b18b837562e748ca2bc3054f167b71df4482d2da8263ef502acb5d21f23259"
+    url "http://www.zsh.org/pub/development/zsh-5.2-test-3.tar.gz"
+    version "5.2-test-3"
+    sha256 "7d486688d77c98b2a9bb8d8d6283d780c0e0ac64b1226dddb3fc9bcca5bcfcc3"
 
     option "with-texi2html", "Build HTML documentation"
     option "with-unicode9", "Build with Unicode 9 character width support"
